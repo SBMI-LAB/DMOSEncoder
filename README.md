@@ -1,6 +1,24 @@
-# DMOSEncoder
+# DMOS Encoder/Decoder library
 
-Use this library to encode/decode files to DMOS using LDPC.
+It is a Python library to encode/decode files to and from DMOS. 
+
+The encoder generates a file with the list of mutations to apply to each DMOS register and the output file is human readable.
+
+The Encoder/Decoder uses LDPC for error-correction, from https://github.com/shubhamchandak94/ProtographLDPC .
+
+The decoder recovers the binary file from the encoded file, it requires the DMOS Decoder C++ library https://github.com/SBMI-LAB/DMOSDecoder to retrieve the binary contents from nanopore sequencing analysis. 
+
+
+## Prerequisites
+
+Python 3
+
+xlrd 
+
+ProtographLDPC 
+
+See https://shubhamchandak94.github.io/ProtographLDPC/installation.html to compile ProtographLPDC
+
 
 
 ## Encode
