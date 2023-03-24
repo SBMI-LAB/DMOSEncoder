@@ -26,9 +26,7 @@ See Example_Encode.py
 
 This example encodes a file (Title.txt) to DMOS. The output file (Encoded.txt) contains the list of mutations to apply per DMOS register. 
 
-#### Import the library
-
-(Python code)
+#### Example code (Python)
 
 from DMOSEncoder.DMOS_encode import *
 
@@ -63,7 +61,8 @@ This example decodes a file a file (Encoded.txt) from DMOS. The output file (Dec
 
 This example uses either an encoded file generated directly with DMOS encoder, or the output from the C++ library.
 
-#### Import the library
+#### Example code (Python)
+
 from DMOSEncoder.DMOS_decode import *
 
 
