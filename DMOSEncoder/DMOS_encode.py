@@ -33,7 +33,7 @@ class DMOSEnc:
         self.getTemplateIDs()
 
     def getTemplateIDs(self):
-        workbook = xlrd.open_workbook( os.path.dirname(os.path.abspath(__file__)) + "/Library/NewTemplates.xlsx")
+        workbook = xlrd.open_workbook( os.path.dirname(os.path.abspath(__file__)) + "/Library/NewRegisters.xls")
 
         sh = workbook.sheet_by_name("Templates")
         for rownum in range(1,sh.nrows):
@@ -358,7 +358,7 @@ class DMOSEnc:
 
     def encodeLDPC(self, message, designs="LDPC01"):
         
-        DevPath = "/home/acroper/Documents/NCAT/Research/DMOS/DMOS_System/FECC/LDPC"
+        DevPath = "LDPC_Library"
         ldpc_path = os.path.join(DevPath,'ProtographLDPC','LDPC-library')
         ldpc_designs = os.path.join(DevPath,'ProtographLDPC','Designs')
         
@@ -413,7 +413,7 @@ class DMOSEnc:
     
     def encodeFileLDPC(self, filename, designs="LDPC01"):
         
-        DevPath = "/home/acroper/Documents/NCAT/Research/DMOS/DMOS_System/FECC/LDPC"
+        DevPath = "LDPC_Library"
         ldpc_path = os.path.join(DevPath,'ProtographLDPC','LDPC-library')
         ldpc_designs = os.path.join(DevPath,'ProtographLDPC','Designs')
         
@@ -455,13 +455,13 @@ class DMOSEnc:
 #        f.write(message)
         f.close()    
         
-        src_file = os.path.join(pathdir,"message.txt")
-        out_path = os.path.join(pathdir,"encoded.txt")
+        src_file = os.path.abspath( os.path.join(pathdir,"message.txt") )
+        out_path = os.path.abspath( os.path.join(pathdir,"encoded.txt") )
         
-        pchk_file = os.path.join(ldpc_designs, designs+".pchk")
-        gen_file = os.path.join(ldpc_designs, designs+".gen")
+        pchk_file = os.path.abspath( os.path.join(ldpc_designs, designs+".pchk") )
+        gen_file = os.path.abspath( os.path.join(ldpc_designs, designs+".gen") )
     
-        ldpc_encode_path = os.path.join(ldpc_path, 'encode.py')
+        ldpc_encode_path = os.path.abspath(os.path.join(ldpc_path, 'encode.py'))
         
         
             # first perform the encoding
