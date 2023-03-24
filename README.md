@@ -24,7 +24,11 @@ See https://shubhamchandak94.github.io/ProtographLDPC/installation.html to compi
 ## Encode
 See Example_Encode.py 
 
-### Import the library
+This example encodes a file (Title.txt) to DMOS. The output file (Encoded.txt) contains the list of mutations to apply per DMOS register. 
+
+#### Import the library
+
+(Python code)
 
 from DMOSEncoder.DMOS_encode import *
 
@@ -53,11 +57,13 @@ Enc.encodeFile_LDPC_DMOS(sourceFile, encoder)
 ## Decode
 See Example_decode.py 
 
+This example decodes a file a file (Encoded.txt) from DMOS. The output file (Decoded.txt) must be equal to the one used during the encoding step.
+
 #### To obtain the binary contents from a DNA Pool, it requires the C++ library from https://github.com/SBMI-LAB/DMOSDecoder
 
 This example uses either an encoded file generated directly with DMOS encoder, or the output from the C++ library.
 
-### Import the library
+#### Import the library
 from DMOSEncoder.DMOS_decode import *
 
 
